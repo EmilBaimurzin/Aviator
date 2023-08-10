@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation"
+    app:startDestination="@id/fragmentFirst">
+
+    <fragment
+        android:id="@+id/fragmentFirst"
+        android:name="com.avia.game.ui.main.FragmentFirst"
+        android:label="FragmentMain" >
+        <action
+            android:id="@+id/action_fragmentMain_to_fragmentAviator"
+            app:destination="@id/fragmentAviator" />
+    </fragment>
+    <fragment
+        android:id="@+id/fragmentAviator"
+        android:name="com.avia.game.ui.aviator.FragmentAviator"
+        android:label="FragmentAviator" >
+        <action
+            android:id="@+id/action_fragmentAviator_to_dialogOver"
+            app:destination="@id/dialogOver" />
+    </fragment>
+    <dialog
+        android:id="@+id/dialogOver"
+        android:name="com.avia.game.ui.dialogs.DialogOver"
+        android:label="DialogOver" >
+        <argument
+            android:name="scores"
+            app:argType="integer" />
+        <argument
+            android:name="stars"
+            app:argType="integer" />
+    </dialog>
+</navigation>
